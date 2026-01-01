@@ -1,0 +1,582 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal {
+  width: 100%;
+  max-width: 416px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #d1d5dc;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0a0a0a;
+  margin: 0;
+  line-height: 24px;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background-color: #f3f4f6;
+}
+
+/* 콘텐츠 */
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* AI 섹션 */
+.aiSection {
+  background-color: #d1d5dc;
+  border: 1px solid #898a8d;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.aiHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.aiTextarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0a0a0a;
+  resize: none;
+  margin-bottom: 12px;
+}
+
+.aiTextarea::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+
+.aiTextarea:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+.aiButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.attachBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.attachBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.analyzeBtn {
+  padding: 8px 16px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.analyzeBtn:hover {
+  background-color: #1d2939;
+}
+
+/* 폼 그룹 */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0a0a0a;
+  line-height: 24px;
+}
+
+.required {
+  color: #fb2c36;
+  margin-left: 2px;
+}
+
+/* 단계 버튼 */
+.stageButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stageBtn {
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #364153;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stageBtn:hover {
+  border-color: #898a8d;
+}
+
+.stageBtnActive {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+/* 입력 필드 */
+.input {
+  width: 100%;
+  padding: 14px 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0a0a0a;
+}
+
+.input::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+
+.input:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+/* 종일 토글 */
+.allDayRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
+.toggle {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  background-color: #d1d5dc;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggleActive {
+  background-color: #151515;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.toggleActive .toggleThumb {
+  transform: translateX(12px);
+}
+
+/* 날짜/시간 입력 */
+.dateTimeRow {
+  display: flex;
+  gap: 12px;
+}
+
+.dateInput {
+  flex: 1;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #000000;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+.timeInput {
+  width: 100px;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #151515;
+}
+
+.timeInput:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+/* 텍스트 영역 */
+.textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0a0a0a;
+  resize: none;
+}
+
+.textarea::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+/* 태그 입력 */
+.tagInputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.tagInput {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #0a0a0a;
+}
+
+.tagInput::placeholder {
+  color: rgba(10, 10, 10, 0.5);
+}
+
+.tagInput:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+.addTagBtn {
+  padding: 8px 16px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addTagBtn:hover {
+  background-color: #1d2939;
+}
+
+/* 태그 목록 */
+.tagList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tagLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a5565;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #0a0a0a;
+}
+
+.tagRemoveBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 알림 설정 */
+.alarmHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addAlarmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.addAlarmBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.alarmRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.alarmValueInput {
+  width: 60px;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0a0a0a;
+  text-align: center;
+}
+
+.alarmValueInput:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+.alarmUnitSelect {
+  width: 70px;
+  padding: 10px 8px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
+.alarmUnitSelect:focus {
+  outline: none;
+  border-color: #898a8d;
+}
+
+.alarmText {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a5565;
+  flex: 1;
+}
+
+.removeAlarmBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.removeAlarmBtn:hover {
+  background-color: #f3f4f6;
+}
+
+/* 버튼 영역 */
+.buttonRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #d1d5dc;
+  margin-top: 8px;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancelBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.submitBtn {
+  padding: 10px 20px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: #1d2939;
+}
+
+.submitBtnDisabled {
+  background-color: #d1d5dc;
+  border-color: #d1d5dc;
+  cursor: not-allowed;
+}
+
+.submitBtnDisabled:hover {
+  background-color: #d1d5dc;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .overlay {
+    padding: 10px;
+  }
+  
+  .modal {
+    margin: 10px 0;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .stageButtons {
+    gap: 6px;
+  }
+  
+  .stageBtn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .dateTimeRow {
+    flex-direction: column;
+  }
+  
+  .timeInput {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,250 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 402px;
+  min-height: 874px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 53px 31px 60px;
+  gap: 24px;
+}
+
+.title {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56.74px;
+  color: #000000;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+}
+
+/* 프로필 섹션 */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.profileLabel {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #151515;
+}
+
+.profileCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #151515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.profileCircle:hover {
+  background-color: #2a2a2a;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileDefault {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* 닉네임 입력 섹션 */
+.inputSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #151515;
+}
+
+.inputWrapper {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 24px;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #151515;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #8f94a3;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px #151515;
+}
+
+.helperText {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: 4px;
+}
+
+/* 관심 분야 섹션 */
+.interestSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.interestLabel {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #151515;
+}
+
+.interestTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.interestTag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #151515;
+  background-color: #e8e8e8;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #151515;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interestTag:hover {
+  background-color: #d0d0d0;
+}
+
+.interestTagSelected {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+.interestTagSelected:hover {
+  background-color: #2a2a2a;
+}
+
+/* 시작하기 버튼 */
+.submitButton {
+  width: 100%;
+  max-width: 351px;
+  height: 45px;
+  border: none;
+  border-radius: 50px;
+  background-color: #8a8a8a;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: not-allowed;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.submitButtonActive {
+  background-color: #151515;
+  cursor: pointer;
+}
+
+.submitButtonActive:hover {
+  background-color: #2a2a2a;
+}
+
+/* 토스트 메시지 */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background-color: #151515;
+  color: #ffffff;
+  border-radius: 8px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+  .content {
+    max-width: 100%;
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .submitButton {
+    max-width: 100%;
+  }
+}
+

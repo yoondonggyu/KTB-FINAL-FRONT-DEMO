@@ -1,0 +1,610 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  width: 100%;
+  max-width: 402px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Toolbar */
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #151515;
+  margin: 0;
+}
+
+.toolbarRight {
+  width: 34px;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  background-color: #ffffff;
+}
+
+.profileAvatar {
+  margin-bottom: 16px;
+}
+
+.avatarPlaceholder {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  background-color: #8a8a8a;
+}
+
+.profileNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileName {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.editNameButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Setting Section */
+.settingSection {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  margin-top: 10px;
+}
+
+.settingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settingInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
+
+.toggle {
+  width: 51px;
+  height: 31px;
+  border-radius: 16px;
+  background-color: #e5e5ea;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.toggleOn {
+  background-color: #34c759;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.toggleOn .toggleThumb {
+  transform: translateX(20px);
+}
+
+/* Code Section */
+.codeSection {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  margin-top: 10px;
+}
+
+.codeSectionTitle {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.codeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.codeText {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #000000;
+}
+
+.copyButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Section */
+.imageSection {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  margin-top: 10px;
+}
+
+.sectionTitle {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.imageGrid {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.imageItem {
+  flex-shrink: 0;
+}
+
+.imagePlaceholder {
+  width: 73px;
+  height: 55px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+}
+
+.moreImagesButton {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Participants Section */
+.participantsSection {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  margin-top: 10px;
+}
+
+.participantsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.participantItem {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.participantItem:hover {
+  background-color: #f9fafb;
+}
+
+.currentUser {
+  background-color: #e5e5ea;
+}
+
+.currentUser:hover {
+  background-color: #e5e5ea;
+}
+
+.participantAvatar {
+  flex-shrink: 0;
+}
+
+.avatarSmall {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #dedede;
+}
+
+.currentUser .avatarSmall {
+  background-color: #898a8d;
+}
+
+.participantName {
+  font-family: 'Klee One', sans-serif;
+  font-size: 14px;
+  color: #2c3339;
+}
+
+/* Leave Button */
+.leaveButton {
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 14px;
+  background-color: #e7000b;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.leaveButton:hover {
+  background-color: #c9000a;
+}
+
+/* Tab Bar */
+.tabBar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 402px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #8e8e93;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 15px;
+}
+
+.tabItemActive {
+  color: #000000;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Modal */
+.modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  padding: 24px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modalHeader h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #101828;
+  margin: 0;
+}
+
+.modalCloseButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBody {
+  margin-bottom: 24px;
+}
+
+.modalBody p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #364153;
+  margin: 0 0 8px 0;
+}
+
+.modalBody p:last-child {
+  margin-bottom: 0;
+}
+
+.editNameInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.editNameInput {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  outline: none;
+}
+
+.editNameInput::placeholder {
+  color: #9ca3af;
+}
+
+.charCount {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: right;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelButton {
+  flex: 1;
+  padding: 12px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #364153;
+  cursor: pointer;
+}
+
+.confirmButton {
+  flex: 1;
+  padding: 12px;
+  background-color: #101828;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.confirmButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.leaveConfirmButton {
+  flex: 1;
+  padding: 12px;
+  background-color: #e7000b;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  z-index: 3000;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+}
+
+.toast p {
+  margin: 0;
+}
+
+/* User Modal */
+.userModal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 402px;
+  max-width: 95%;
+  padding: 24px;
+  position: relative;
+}
+
+.userModalClose {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.userModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.userModalAvatar {
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatarLarge {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  background-color: #151515;
+}
+
+.userModalInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.userModalName {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 32px;
+  color: #151515;
+}
+
+.chatButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.followButton {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #151515;
+  background-color: #e8e8e8;
+  color: #151515;
+  transition: all 0.2s ease;
+}
+
+.followButton.following {
+  background-color: #151515;
+  color: #e8e8e8;
+}
+
+.userModalInterests {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.interestTag {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #6a7282;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .tabBar {
+    max-width: 100%;
+  }
+}
+

@@ -1,0 +1,422 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 402px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Toolbar */
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #e8e8e8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #151515;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.saveButton {
+  padding: 8px 12px;
+  background-color: #d1d5dc;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.saveButton:hover {
+  background-color: #151515;
+}
+
+/* Messages Container */
+.messagesContainer {
+  flex: 1;
+  width: 100%;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 180px; /* Space for input and interview button */
+}
+
+.messageWrapper {
+  display: flex;
+  gap: 10px;
+  max-width: 85%;
+}
+
+.aiMessageWrapper {
+  align-self: flex-start;
+}
+
+.userMessageWrapper {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.aiAvatar {
+  width: 36px;
+  height: 36px;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.messageBubble {
+  padding: 12px 15px;
+  border-radius: 15px;
+  max-width: 100%;
+}
+
+.aiBubble {
+  background-color: #ffffff;
+  border: 1px solid #9ba9b0;
+  border-top-left-radius: 5px;
+}
+
+.userBubble {
+  background-color: #e7fecc;
+  border: 1px solid #9ba9b0;
+  border-top-right-radius: 5px;
+}
+
+.messageContent {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #22282b;
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.messageTime {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #7e919a;
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.userBubble .messageTime {
+  color: #439636;
+}
+
+.messageImage {
+  margin-bottom: 10px;
+  max-width: 200px;
+}
+
+.messageImage img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Typing Indicator */
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  padding: 5px 0;
+}
+
+.typingIndicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #8a8a8a;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typingIndicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Interview Button Container */
+.interviewButtonContainer {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 125px; /* Above input container */
+  max-width: 402px;
+  z-index: 999;
+}
+
+.interviewButton {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #151515;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.interviewButton:hover {
+  background-color: #364153;
+}
+
+/* Input Container */
+.inputContainer {
+  width: 100%;
+  max-width: 402px;
+  padding: 10px 15px;
+  background-color: rgba(249, 249, 249, 0.8);
+  border-top: 1px solid rgba(60, 60, 67, 0.36);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  bottom: 56px; /* Above tab bar */
+  z-index: 1000;
+}
+
+.attachmentButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.attachButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.attachButton:hover {
+  opacity: 1;
+}
+
+.messageInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #d1d1d6;
+  border-radius: 20px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.messageInput::placeholder {
+  color: #aeaeb2;
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aeaeb2;
+  transition: color 0.2s ease;
+}
+
+.sendButton.sendButtonActive {
+  color: #151515;
+}
+
+.sendButton:disabled {
+  cursor: not-allowed;
+}
+
+/* Tab Bar */
+.tabBar {
+  width: 100%;
+  max-width: 402px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8a8a8a;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.tabItem.tabItemActive {
+  color: #151515;
+}
+
+.tabItem.tabItemActive svg path,
+.tabItem.tabItemActive svg rect,
+.tabItem.tabItemActive svg circle {
+  stroke: #151515;
+  fill: #151515;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modalTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.modalMessage {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modalActions {
+  display: flex;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.modalCancelButton, .modalConfirmButton {
+  flex: 1;
+  padding: 15px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.modalCancelButton {
+  background-color: #9c9c9c;
+  color: #000000;
+  border-bottom-left-radius: 10px;
+}
+
+.modalConfirmButton {
+  background-color: #d9d9d9;
+  color: #000000;
+  border-bottom-right-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .toolbar {
+    padding: 10px;
+  }
+
+  .messagesContainer {
+    padding: 10px;
+  }
+
+  .inputContainer {
+    padding: 8px 10px;
+  }
+
+  .tabBar {
+    padding: 8px 0;
+  }
+
+  .modal {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+}
+

@@ -1,0 +1,635 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding-bottom: 70px;
+  width: 100%;
+  max-width: 402px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Toolbar */
+.toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Actor', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationDot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ff3b30;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+}
+
+/* Main Content */
+.mainContent {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+}
+
+.profileImageWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #151515, rgba(0, 0, 0, 0.6));
+  border-radius: 50%;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.nickname {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.interestTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.interestTag {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6a7282;
+}
+
+.editButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Actor', sans-serif;
+  font-size: 11px;
+  color: #adb3bc;
+}
+
+/* Follow Section */
+.followSection {
+  display: flex;
+  gap: 80px;
+  margin-top: 20px;
+}
+
+.followButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #151515;
+  padding: 0;
+}
+
+.followButton:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Tab Container */
+.tabContainer {
+  display: flex;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+  padding: 2px;
+  margin-top: 20px;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #151515;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.tabButton.tabButtonActive {
+  background-color: #151515;
+  color: #ffffff;
+}
+
+/* Content List */
+.contentList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.postCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.postCard:hover {
+  border-color: #d1d5dc;
+}
+
+.postTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #101828;
+  margin: 0 0 5px 0;
+}
+
+.postDate {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
+
+.postContent {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #4a5565;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.postStats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #6a7282;
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.emptyState p {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #8a8a8a;
+  margin: 0;
+}
+
+/* Bottom Tab Bar */
+.tabBar {
+  width: 100%;
+  max-width: 402px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8a8a8a;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.tabItem.tabItemActive {
+  color: #151515;
+}
+
+.tabItem.tabItemActive svg path,
+.tabItem.tabItemActive svg rect,
+.tabItem.tabItemActive svg circle {
+  stroke: #151515;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Edit Modal */
+.editModal {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  padding: 20px;
+  width: 339px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Edit Profile Image */
+.editProfileImageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.editProfileImageWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.editProfileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editProfileImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #151515, rgba(0, 0, 0, 0.6));
+}
+
+.editProfileImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.editProfileImageButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteImageButton {
+  padding: 4px 10px;
+  background-color: #b9b9b9;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Edit Input Section */
+.editInputSection {
+  margin-bottom: 20px;
+}
+
+.editLabel {
+  display: block;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #151515;
+  margin-bottom: 8px;
+}
+
+.editInput {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #151515;
+  box-sizing: border-box;
+}
+
+.editInput::placeholder {
+  color: #5c5c5c;
+}
+
+.helperTextError {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #ff3b30;
+  margin: 5px 0 0 0;
+}
+
+.helperTextSuccess {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #34c759;
+  margin: 5px 0 0 0;
+}
+
+/* Interest Chips */
+.interestChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interestChip {
+  padding: 6px 12px;
+  background-color: #e8e8e8;
+  border: 1px solid #151515;
+  border-radius: 20px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 14px;
+  color: #151515;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interestChip.interestChipActive {
+  background-color: #151515;
+  color: #f9fafb;
+}
+
+/* Save Button */
+.saveButton {
+  width: 100%;
+  padding: 13px 20px;
+  background-color: #151515;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.withdrawLink {
+  display: block;
+  margin: 15px auto 0;
+  background: none;
+  border: none;
+  font-family: 'SF Pro Rounded', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #b9b9b9;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Withdraw Modal */
+.withdrawModal {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  padding: 20px;
+  width: 339px;
+  position: relative;
+}
+
+.withdrawContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.withdrawIcon {
+  flex-shrink: 0;
+}
+
+.withdrawText {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.withdrawPlaceholderText {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  margin: 0 0 10px 0;
+}
+
+.withdrawInput {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 10px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  color: #5c5c5c;
+  box-sizing: border-box;
+}
+
+.withdrawButton {
+  width: 100%;
+  padding: 13px 20px;
+  background-color: #8a8a8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 16px;
+  cursor: not-allowed;
+  margin-top: 20px;
+}
+
+.withdrawButton.withdrawButtonActive {
+  background-color: #151515;
+  cursor: pointer;
+}
+
+/* Withdraw Complete Modal */
+.withdrawCompleteModal {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  padding: 40px 20px;
+  width: 339px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.withdrawCompleteIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.withdrawCompleteTitle {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 20px;
+  color: #151515;
+  margin: 0;
+}
+
+.withdrawCompleteButton {
+  background: none;
+  border: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  color: #b9b9b9;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mainContent {
+    padding: 0 10px;
+  }
+
+  .editModal,
+  .withdrawModal,
+  .withdrawCompleteModal {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+
+  .nickname {
+    font-size: 32px;
+  }
+
+  .followSection {
+    gap: 40px;
+  }
+}
+
